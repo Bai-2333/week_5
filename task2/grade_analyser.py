@@ -113,7 +113,8 @@ def main():
                 output_data.append([student_id, f"{average_grade:.2f}", classification])
 
         # Define the output file path directly in the task2 directory
-        output_file_name = f"{file_name}_out.csv"
+        #output_file_name = f"{file_name}_out.csv"
+        output_file_name = f"{os.path.splitext(file_name)[0]}_out.csv"
         output_file_path = os.path.join(task2_directory, output_file_name)
 
         try:

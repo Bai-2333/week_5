@@ -30,11 +30,10 @@ Note:
 Your code will only be tested on valid files in the format shown in the 4 example files in this folder - you do not need to validate any data.
 '''
 
-
 import os
 import csv
 
-# Portfolio Task - Grade Analyser
+# Portfolio Task - Grade Analyser   
 
 def get_classification(average_grade):
     if average_grade >= 70:
@@ -49,9 +48,8 @@ def get_classification(average_grade):
         return 'F'
 
 def main():
-    # Get the list of all CSV files in the "task2" directory
+    # Define the task2 directory
     task2_directory = "task2"
-    bai_mingjiang_directory = os.path.join(task2_directory, "bai_mingjiang_outfiles")
 
     try:
         files_list = sorted([f for f in os.listdir(task2_directory) if f.endswith('.csv')])
@@ -114,12 +112,9 @@ def main():
                 classification = get_classification(average_grade)
                 output_data.append([student_id, f"{average_grade:.2f}", classification])
 
-        # Write the output data to a new CSV file in the "bai_mingjiang_outfiles" directory
-        if not os.path.exists(bai_mingjiang_directory):
-            os.makedirs(bai_mingjiang_directory)
-
+        # Define the output file path directly in the task2 directory
         output_file_name = f"{file_name}_out.csv"
-        output_file_path = os.path.join(bai_mingjiang_directory, output_file_name)
+        output_file_path = os.path.join(task2_directory, output_file_name)
 
         try:
             with open(output_file_path, 'w', newline='', encoding='utf-8') as outfile:

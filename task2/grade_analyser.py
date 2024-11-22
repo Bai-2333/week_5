@@ -49,7 +49,7 @@ def get_classification(average_grade):
 
 def main():
     # Define the task2 directory
-    task2_directory = "task2"
+    task2_directory = "./task2"
 
     try:
         files_list = sorted([f for f in os.listdir(task2_directory) if f.endswith('.csv')])
